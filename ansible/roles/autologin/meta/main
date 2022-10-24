@@ -1,0 +1,4 @@
+---
+dependencies:
+- get Display manager
+- get Desktop environment

@@ -1,0 +1,6 @@
+---
+
+sddm_line: "sddm.service - Simple Desktop Display Manager"
+
+# default
+desktop_environment: null

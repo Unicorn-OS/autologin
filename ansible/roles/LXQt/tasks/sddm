@@ -1,0 +1,21 @@
+---
+- name: create sddm.conf.d directory
+  become: true
+  ansible.builtin.file:
+    path: "{{sddm_dir}}"
+    state: directory
+
+
+- name: Autologin LXQt on sddm
+  become: true
+  ansible.builtin.blockinfile:
+    path: "{{sddm_config}}"
+    create: true
+    block: |
+      [Autologin]
+      User={{ansible_user}}
+      Session=lxqt.desktop
+      Relogin=
+  notify: reboot node
+
+# https://www.reddit.com/r/linuxquestions/comments/qlv14v/comment/hj5fz46/?utm_source=reddit&utm_medium=web2x&context=3

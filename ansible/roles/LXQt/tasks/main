@@ -1,0 +1,4 @@
+---
+
+- include_tasks: sddm
+  when: display_manager == "sddm"

@@ -1,0 +1,15 @@
+---
+
+- name: is LXQt
+  ansible.builtin.command: which lxqt-session
+  register: lxqt
+  ignore_errors: true
+  failed_when: false
+
+- name: get desktop environment LXQt
+  set_fact:
+    desktop_environment: lxqt
+  when: not lxqt.rc
+
+# - debug:
+#     msg: "Try {{desktop_environment}}"

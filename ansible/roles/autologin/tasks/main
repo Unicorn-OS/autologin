@@ -1,0 +1,4 @@
+---
+- include_role:
+    name: LXQt
+  when: desktop_environment == "lxqt"

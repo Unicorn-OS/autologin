@@ -1,0 +1,8 @@
+---
+- hosts: node #local
+  vars:
+    somevar: "value"
+    source: "package"
+
+  roles:
+  - autologin

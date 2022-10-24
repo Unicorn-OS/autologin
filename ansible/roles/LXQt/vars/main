@@ -1,0 +1,4 @@
+---
+
+sddm_dir: /etc/sddm.conf.d
+sddm_config: "{{sddm_dir}}/autologin"

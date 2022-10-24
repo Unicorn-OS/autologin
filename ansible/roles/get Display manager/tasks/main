@@ -1,0 +1,17 @@
+---
+
+- name: register display manager
+  ansible.builtin.command: systemctl status display-manager
+  register: dm_status
+
+# - debug:
+#     msg: "DM {{dm_status.stdout_lines[0]}}"
+
+- name: get display manager
+  set_fact:
+    display_manager: sddm
+  when: sddm_line in dm_status.stdout_lines[0]
+
+# - debug:
+#     msg: |
+#       {{display_manager}}
